@@ -102,22 +102,23 @@ def pq_merge(string1, string2) -> tuple[str, float]:
     assert len(string1) == len(string2)
     if string1 == string2:
         return "I" * len(string1), 1
-    product_letters = ''
+    product_letters = []
     sgn = 1
     for letter, _ in enumerate(string1):
         if string1[letter] == "I":
-            product_letters = product_letters.join(string2[letter])
+            product_letters += [string2[letter]]
         elif string2[letter] == "I":
-            product_letters = product_letters.join(string1[letter])
+            product_letters += [string1[letter]]
         elif string1[letter] == string2[letter]:
-            product_letters = product_letters.join("I")
+            product_letters += ["I"]
         else:
             i = letter_to_number[string1[letter]]
             j = letter_to_number[string2[letter]]
             k = 6 - i - j
-            product_letters = product_letters.join(number_to_letter[k])
+            product_letters += [number_to_letter[k]]
             sgn *= levi_civita(i, j, k) * 1.j
-    return product_letters, sgn
+    return "".join(product_letters), sgn
+
 
 
 def mergn(letters) -> tuple[str, float]:
