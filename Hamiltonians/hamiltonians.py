@@ -173,7 +173,7 @@ class Hamiltonian():
                 # Test to see if a second grouping reduces the size of the set of qwc bases.
                 # If it does not, return the current set. If it does, try grouping again.
 
-                next_run = qwc_bases_ham.grouping()
+                next_run = qwc_bases_ham.grouping(size=size, tried=current_QWC_bases_length)
                 if current_QWC_bases_length <= len(next_run):
                     return bases
                 return Hamiltonian(next_run, np.ones(len(next_run))).grouping(
