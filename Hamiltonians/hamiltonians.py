@@ -52,7 +52,7 @@ class Hamiltonian():
         product_dict = {}
         for i in range(len(self.letters)):
             for j in range(len(multiplier_hamiltonian.letters)):
-                prod, sgn = helper.PQ_merge(self.letters[i],
+                prod, sgn = helper.pq_merge(self.letters[i],
                                             multiplier_hamiltonian.letters[j])
                 coeff = self.coeffs[i] * multiplier_hamiltonian.coeffs[j] * sgn
                 if not prod in product_dict:
