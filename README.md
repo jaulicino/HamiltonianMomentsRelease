@@ -1,6 +1,7 @@
 <h1> Hamiltonian Moments </h1>
 
-The codes for https://arxiv.org/abs/2109.12790
+The codes for https://arxiv.org/abs/2109.12790, https://onlinelibrary.wiley.com/doi/full/10.1002/qua.26853
+
 
 <h2> Hamiltonian Class </h2>
 
