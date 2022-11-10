@@ -94,7 +94,7 @@ class Hamiltonian():
         '''Approximate a Hamiltonian exponential with an nth order Taylor expansion.'''
         sum_hamiltonian = Hamiltonian(["I" * len(self.letters[0])], [1.0])
         for i in range(1, order):
-            power_hamiltonian = self.power(i).multScalar(1 /
+            power_hamiltonian = self.power(i).mult_scalar(1 /
                                                          (math.factorial(i)))
             sum_hamiltonian = sum_hamiltonian.add(power_hamiltonian)
             sum_hamiltonian = sum_hamiltonian.condense()

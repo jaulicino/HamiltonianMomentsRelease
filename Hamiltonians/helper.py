@@ -1,7 +1,6 @@
 '''helper functions for hamiltonian moments paper'''
 from itertools import combinations
 import numpy as np
-import pennylane as qml
 
 PAULI_X = np.array([[0.0, 1.0], [1.0, 0.0]], dtype=complex)
 PAULI_Y = np.array([[0.0, -1.j], [1.j, 0.0]], dtype=complex)
