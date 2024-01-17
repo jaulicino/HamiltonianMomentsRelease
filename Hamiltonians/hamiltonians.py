@@ -35,14 +35,8 @@ class Hamiltonian():
         for i in range(len(self.letters)):
             if self.letters[i] in dict_:
                 dict_[self.letters[i]] += self.coeffs[i]
-            else:
+            elif np.abs(self.coeffs[i]) > 0:
                 dict_[self.letters[i]] = self.coeffs[i]
-        keys_to_pop = []
-        for key in dict_:
-            if np.abs(dict_[key]) == 0:
-                keys_to_pop += [key]
-        for i in keys_to_pop:
-            dict_.pop(i)
         letters = list(dict_.keys())
         values = list(dict_.values())
         return Hamiltonian(letters, values)
